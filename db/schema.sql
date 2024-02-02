@@ -1,0 +1,4 @@
+DROP DATABASE IF EXISTS gg_db;
+CREATE DATABASE gg_db;
+
+USE gg_db;

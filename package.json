@@ -1,0 +1,25 @@
+{
+  "name": "ggz",
+  "version": "1.0.0",
+  "description": "Good Games (GGz) is an application designed to allow users to find and keep track of the games that they've played, in similar fashion to GoodReads.  On GoodGamez, users are able to post short reviews of the games that they've played and possible find new games to play.      Upon visiting the homepage, users are greeted with a showing of the site's featured games based off of popularity. To the right, users are able to either create their profile or log-in.The application was developed to showcase understanding of Node.js, Express.js, and Handlebars.js. It is backed by a MySQL Database w/ a Sequelize ORM. The RAWG Video Games API and the promise-based HTTP client \"Axios\" were used to add functionality to the site. The RAWG API returns information such as release year, title, genre, and cover images in response to user input. Axios was utilized to create HTTP requests. The floder structure mimics the MVS paradigm.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "bcrypt": "^5.1.1",
+    "connect-session-sequelize": "^7.1.7",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.18.0",
+    "handlebars": "^4.7.8",
+    "mysql2": "^3.9.1",
+    "sequelize": "^6.36.0"
+  }
+}

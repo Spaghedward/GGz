@@ -5,5 +5,6 @@ const gamesRoutes = require('./gamesRoutes');
 
 router.use('/games', gamesRoutes);
 router.use('/users', userRoutes);
+=======
 
 module.exports = router;

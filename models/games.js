@@ -1,10 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class games extends Model { }
+class Games extends Model { }
 
-games.init(
+Games.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -21,7 +20,7 @@ games.init(
       allowNull: false,
     },
     screenshots_count: {
-      type: DataTypes.INTEGER[1],
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     released: {
@@ -33,6 +32,13 @@ games.init(
       allowNull: false,
     }
   },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'games',
+  }
 );
 
-module.exports = games;
+module.exports = Games;

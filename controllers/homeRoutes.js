@@ -16,3 +16,4 @@ router.get('/support', (req, res) => {
     res.render('support');
 });
 
+module.exports = router;

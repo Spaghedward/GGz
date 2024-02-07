@@ -1,12 +1,12 @@
 const user = require('./user');
 const games = require('./games');
 
-User.hasMany(games, {
+user.hasMany(games, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 
-games.belongsTo(User, {
+games.belongsTo(user, {
   foreignKey: 'user_id'
 });
 

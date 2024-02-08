@@ -1,8 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class games extends Model {}
+class Games extends Model { }
 
 games.init(
     {
@@ -42,6 +41,5 @@ underscored: true,
 modelName: 'games',
 }
 
-);
 
-module.exports = games;
+module.exports = Games;

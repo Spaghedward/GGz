@@ -21,7 +21,7 @@ games.init(
         allowNull: false,
       },
       screenshots_count: {
-        type: DataTypes.INTEGER[1],
+        type: DataTypes.INTEGER,
         allowNull: false,
      },
      released: {
@@ -34,6 +34,14 @@ games.init(
 
      }
     },
+{
+sequelize,
+timestamps: false,
+freezeTableName: true,
+underscored: true,
+modelName: 'games',
+}
+
 );
 
 module.exports = games;

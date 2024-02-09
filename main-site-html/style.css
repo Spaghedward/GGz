@@ -15,6 +15,9 @@ img { /*background image style here*/
 }
 
 body {
+  /*display: flex; 
+  justify-content: center; 
+  align-items: center; added just now*/
 	font-family: "Rubik", sans-serif;
 	font-size: clamp(1rem, 2vw, 1.25rem);
 	font-weight: 400;
@@ -43,8 +46,6 @@ a, button {
   padding: 0 1.5rem;
 }
 
-
-
 .header {
   position: fixed;
   top: 0;
@@ -53,6 +54,7 @@ a, button {
   height: auto;
   margin: 0 auto;
   transition: all 1.5s ease;
+  color: white;
   background-color: black;
 }
 
@@ -84,7 +86,6 @@ a, button {
   height: 10px;
   width: 10px;
   color: white;
-
 }
 
 .menu {
@@ -97,15 +98,15 @@ a, button {
   overflow: hidden;
   background-color: black;
   transition: all 0.5s ease-in-out;
-  
 }
+
 .menu.is-active {
   top: 0;
   width: 100%;
   height: auto;
   transform: translateX(0) translateY(80%);
-
 }
+
 .menu-inner {
   display: flex;
   flex-direction: column;
@@ -113,6 +114,7 @@ a, button {
   align-items: center;
   row-gap: 1.5rem;
 }
+
 .menu-link {
 	font-family: inherit;
 	font-size: 18px;
@@ -128,9 +130,11 @@ a, button {
 	background-position: right bottom;
 	transition: all 0.3s ease-in-out;
 }
+
 .menu-link:hover {
     background-position: 0%;
 }
+
 .menu-block {
   border: 2px solid #d80221;
   position: relative;
@@ -147,9 +151,9 @@ a, button {
 	background: linear-gradient(to right, #d80221 50%, transparent 50%);
 	background-size: 200% 100%;
 	background-position: right bottom;
-	transition: all .7s ease-out;
-    
+	transition: all .7s ease-out;   
 }
+
 .menu-block:hover {
   background-position: left bottom;
 }
@@ -160,7 +164,7 @@ a, button {
 }
 
 .brandlogo img:hover {
-  
+   
 }
 /* Hamburger menu stuff start */
 @media only screen and (min-width: 48rem) {
@@ -241,6 +245,9 @@ a, button {
 .burger.is-active .burger-line:nth-child(2) {
   opacity: 0;
   visibility: hidden;
+  .wrapper {
+    visibility: hidden;
+  }
 }
 .burger.is-active .burger-line:nth-child(3) {
   top: 0.5rem;
@@ -252,13 +259,6 @@ a, button {
          /* hamburger menu stuff end */
 
         /*footer content start*/ 
-.social {     
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-}
 
 .banner-links {
   position: absolute;
@@ -298,6 +298,7 @@ a, button {
     grid-template-columns: 1fr max-content;
     column-gap: 4rem;
     margin-top: 3rem;
+
   }
 }
 
@@ -305,6 +306,7 @@ a, button {
 	.menu-block {
 		padding: 5px 30px;
 		font-size: 14px;
+    
 	}
 	.brandlogo img {
 		width: 100px;
@@ -322,10 +324,11 @@ a, button {
 }
 
 .logos { 
+  position: relative;
+  top: 160px;
   overflow: hidden;
-  padding: 125px 0;
-  height: 100%;
-  z-index: 1;
+  height: 100px;
+
 }
 
 .logos-slide {
@@ -333,11 +336,109 @@ a, button {
   white-space: nowrap;
   animation: 60s slide infinite linear;
   border: 5px solid black
-  
 }
 
 .logos-slide img { /*spacing between the game photos*/
   height: 75px;
   margin: 10px 10px;
   border-radius: 15px;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin-top: 150px;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.social {     
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: -100px;
+  width: 100%;
+}
+.login-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  top: 0;
+  height: 50vh;
+  width: 400px;
+  border: 5px solid red;
+  border-radius: 15px;
+  background-color: black;
+  
+}
+.login-wrapper .btn {
+  display: flex;
+  color: white;
+  background-color: black;
+  padding: 10px;
+  width: 75px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border: 2px solid red;
+  margin: 30px 20px 10px 30px;
+  border-radius: 15px;
+}
+
+.wrapper, h1 {
+  font-size: 16px;
+
+}
+
+.wrapper .input-box {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  margin: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-box input {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  height: 50%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid gray;
+  border-radius: 40px;
+  font-size: 14px;
+  color: white;
+  background-color: ;
+  padding: 20px;
+}
+
+.input-box input::placeholder {
+  color: white;
+}
+
+.input-box i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50);
+  font-size: 20px;
+
+}
+
+.wrapper .remember-forgot {
+  position: relative;
+  bottom: 0;
+  
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 15px 0 15px;
 }

@@ -1,13 +1,25 @@
 const user = require('./user');
-const games = require('./games');
+const games = require('./Games');
 
-user.hasMany(games, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
+
+user.belongsToMany(games, {
+  through: {
+    model: 'Like',
+    unique: false,
+  },
+  as: 'likedGames',
+  foreignKey: 'userId',
+  constraints: false,
 });
 
-games.belongsTo(user, {
-  foreignKey: 'user_id'
+games.belongsToMany(user, {
+  through: {
+    model: 'Like',
+    unique: false,
+  },
+  as: 'likingUsers',
+  foreignKey: 'likeableId',
+  constraints: false,
 });
 
 module.exports = { user, games };

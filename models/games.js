@@ -13,23 +13,23 @@ Games.init(
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      // allowNull: false,
     },
-    description: {
+    screenshot: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    screenshots_count: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+      // allowNull: false,
     },
     released: {
       type: DataTypes.STRING,
-      allowNull: false,
+      // allowNull: false,
     },
     genre: {
       type: DataTypes.STRING,
-      allowNull: false,
+      // allowNull: false,
+    },
+    rawgId: {
+      type: DataTypes.INTEGER,
+      // allowNull: false,
     }
   },
   {

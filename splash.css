@@ -1,0 +1,40 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    cursor: pointer;
+    background-image: url(./images/good-games-logo.png);
+    transition: opacity 1s; /* Adding a transition for opacity */
+}
+        
+#btn.clicked {
+    opacity: 0; /* Fading out the button when clicked */
+}
+
+

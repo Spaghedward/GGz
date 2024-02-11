@@ -1,84 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" >
-<!-- Code by Keyframe Effects -->
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Good Gamez</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="./style.css">
-	<link rel='stylesheet' href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Good Gamez</title>
+<link rel="stylesheet" href="splash.css">
+    
 </head>
 <body>
     
-<body>
-   
-<html>
-<header class="header" id="header">
-    <nav class="navbar container">
-       <a href="#" class="brandlogo"><img src="./good-games-logo.png" /></a>
-       <div class="burger" id="burger">
-          <span class="burger-line"></span>
-          <span class="burger-line"></span>
-          <span class="burger-line"></span>
-       </div>
-       <div class="menu" id="menu">
-          <ul class="menu-inner"> <!--header/ burger menu page links here-->
-             <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
-             <li class="menu-item"><a href="#" class="menu-link">Games</a></li>
-             <li class="menu-item"><a href="#" class="menu-link">Profiles</a></li>
-             <li class="menu-item"><a href="#" class="menu-link">Support</a></li>
-          </ul>
-       </div>
-       <a href="#" class="menu-block">Join</a>
-    </nav>
     
- </header>
-<div class="logos">
-   <ul class="logos-slide">
-       <img src="https://placehold.jp/150x150.png">
-       <img src="https://placehold.jp/150x150.png">
-       <img src="https://placehold.jp/150x150.png">
-       <img src="https://placehold.jp/150x150.png">
-       <img src="https://placehold.jp/150x150.png">
-       <img src="https://placehold.jp/150x150.png">
-       <img src="https://placehold.jp/150x150.png">
-       <img src="https://placehold.jp/150x150.png">
-       <img src="https://placehold.jp/150x150.png">
-       <img src="https://placehold.jp/150x150.png">
-       <img src="https://placehold.jp/150x150.png">
-       <img src="https://placehold.jp/150x150.png">
-       <img src="https://placehold.jp/150x150.png">
-       <img src="https://placehold.jp/150x150.png">
-       <img src="https://placehold.jp/150x150.png">
-       <img src="https://placehold.jp/150x150.png">
-   </ul>
-</div>
+    <button id="btn" onclick="fadeOutAndOpenLink()">
+        <header>
+            <h1>Click Logo to Enter</h1>
+        </header></button>
+    
+    <script type="text/javascript">
+        const audio = new Audio();
+        audio.src = "audio/epic-hybrid-logo-157092.mp3";
 
-<div class="body-container">
-   <div class="content-container-left">
-   </div>
-   
-   <div class="content-container-right">
-   </div>
-   
-   <div class="content-container-bottom">
+        function fadeOutAndOpenLink() {
+            audio.play();
+            const btn = document.getElementById("btn");
+            btn.classList.add("clicked"); // Apply the "clicked" class to initiate the fade-out
+            setTimeout(() => {
+                window.open("./main-site-html/home.html", "_blank");
+            }, 2000); // Adjust the timeout to match the duration of the transition
+        }
+    </script>
+</body>
+</html>
 
-   </div>
-</div>
-
- 
-      <div class="social">
-         <div class="banner-links">
-            <a href="#" title=""><i class="fa fa-facebook-f"></i></a>
-            <a href="#" title=""><i class="fa fa-twitter"></i></a>
-            <a href="#" title=""><i class="fa fa-instagram"></i></a>
-            <a href="#" title=""><i class="fa fa-youtube-play"></i></a>
-            <a href="#" title=""><i class="fa-brands fa-discord"></i></a>
-         </div>
-        
-      </div>
-   <script  src="./burger.js"></script>
- 
- </body>
- </html>

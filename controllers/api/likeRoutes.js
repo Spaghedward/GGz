@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Games, Like, User } = require('../../models');
+const { Game, Like, User } = require('../../models');
 const isAuth = require('../../utils/helpers');
 require('dotenv').config();
 
@@ -8,7 +8,7 @@ router.post('/:id', isAuth, async (req, res) => {
         const { id } = req.params; 
         const userId = req.session.userId 
     
-        const game = await Games.findByPk(id);
+        const game = await Game.findByPk(id);
         const user = await User.findByPk(userId);
     
         if (!game || !user) {

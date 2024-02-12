@@ -298,7 +298,9 @@ a, button {
     grid-template-columns: 1fr max-content;
     column-gap: 4rem;
     margin-top: 3rem;
-
+  }
+  .login-option {
+    visibility: hidden;
   }
 }
 
@@ -335,7 +337,6 @@ a, button {
   display: inline-block;
   white-space: nowrap;
   animation: 60s slide infinite linear;
-  border: 5px solid black
 }
 
 .logos-slide img { /*spacing between the game photos*/
@@ -359,15 +360,15 @@ a, button {
 .social {     
   display: flex;
   flex-wrap: wrap;
-  position: absolute;
-  bottom: -100px;
+  position: fixed;
+  bottom: 0;
   width: 100%;
 }
 .login-wrapper {
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  top: 0;
+  top: 20px;
   height: 50vh;
   width: 400px;
   border: 5px solid red;

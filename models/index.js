@@ -1,7 +1,7 @@
 const user = require('./user');
-const games = require('./games');
+const game = require('./game');
 
-user.belongsToMany(games, {
+user.belongsToMany(game, {
   through: {
     model: 'Like',
     unique: false,
@@ -11,7 +11,7 @@ user.belongsToMany(games, {
   constraints: false,
 });
 
-games.belongsToMany(user, {
+game.belongsToMany(user, {
   through: {
     model: 'Like',
     unique: false,
@@ -21,4 +21,4 @@ games.belongsToMany(user, {
   constraints: false,
 });
 
-module.exports = { user, games };
+module.exports = { user, game };

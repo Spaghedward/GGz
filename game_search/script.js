@@ -1,4 +1,4 @@
-const accessKey = "API KEY GOES HERE"  //HERE HERE HERE HERE
+const accessKey = process.env.APIKEY  //HERE HERE HERE HERE
 
 const formEl = document.querySelector("form")
 const inputEl = document.getElementById("search-input")

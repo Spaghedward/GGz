@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const { Games } = require('../../models')
+const { Game } = require('../../models')
 const axios = require('axios');
+const isAuth = require('../../utils/helpers');
 require('dotenv').config();
 
 router.get('/', async (req, res) => {
@@ -10,7 +11,7 @@ router.get('/', async (req, res) => {
         };
 
         const games = await axios.get(`https://rawg.io/api/games?key=${process.env.APIKEY}&page_size=12`, { headers });
-        res.render('whatever', { data: games.data });
+        res.render('games', { data: games.data });
     } catch (err) {
         res.status(500).json(err);
     };
@@ -24,13 +25,13 @@ router.get('/search', isAuth, async (req, res) => {
 
         const data = await axios.get(`https://rawg.io/api/games?key=${process.env.APIKEY}&search=${req.query.search}&page_size=1`, { headers });
         const game = data.data.results[0];
-        
-        const newGame = await Games.create({
-                name: game.name,
-                screenshot: game.background_image,
-                released: game.released,
-                genre: game.genre[0],
-                rawgId: game.id,
+
+        const newGame = await Game.create({
+            name: game.name,
+            screenshot: game.background_image,
+            released: game.released,
+            genre: game.genre[0],
+            rawgId: game.id,
         });
         res.render('whatever', { data: newGame });
     } catch (err) {
@@ -52,7 +53,7 @@ router.get('/genres', async (req, res) => {
     };
 });
 
-router.get('/popular', isAuth, async (req, res) => {
+router.get('/popular', async (req, res) => {
     try {
         const headers = {
             'Content-Type': 'application/json'

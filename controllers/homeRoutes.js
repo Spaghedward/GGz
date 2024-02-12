@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Like, Games, User } = require('../models');
 const axios = require('axios');
+const isAuth = require('../utils/helpers');
 require('dotenv').config();
 
 
@@ -10,7 +11,7 @@ router.get('/', async (req, res) => {
         'Content-Type': 'application/json'
     };
 
-    const games = await axios.get(`https://rawg.io/api/games?key=${process.env.APIKEY}&page_size=12`, { headers });
+    const games = await axios.get(`https://rawg.io/api/games?key=${process.env.APIKEY}&page_size=15`, { headers });
     res.render('main', { data: games.data });
 } catch (err) {
     res.status(500).json(err);
@@ -26,19 +27,19 @@ router.get('/profile', isAuth, async (req, res) => {
         const userId = req.session.userId;
     
         if (!userId) {
-          res.render('main')
+          res.redirect('main')
         };
 
         const user = await User.findbyPk(userId);
         
         const likedGames = await Like.findAll({
           where: { userId },
-          include: [{ model: Games, attributes: ['id', 'name', 'screenshot', 'genre', 'released'] }],
+          include: [{ model: Game, attributes: ['id', 'name', 'screenshot', 'genre', 'released', 'rawgId'] }],
         });
     
         const games = likedGames.map(like => like.game);
     
-        res.render('profile', {user: user.name, likedGames: games});
+        res.render('profiles', {user: user.name, likedGames: games});
       } catch (err) {
         res.render('404');
       }

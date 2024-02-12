@@ -1,7 +1,9 @@
-<div class="card" data-rawg="{{rawgId}}">
+<div class="card" data-gameId="{{gameId}}">
     <img src="{{screenshot}}" alt="{{name}} Screenshot">
     <h2>{{name}}</h2>
     <p>Genre: {{genre}}</p>
    <p> Release Date: {{released}}</p>
+   {{#if session.userId}}
    <button id="likeButton">Like</button>
+   {{/if}}
 </div>

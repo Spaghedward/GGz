@@ -2,6 +2,8 @@ const isAuth = (req, res, next) => {
     if (req.session.userId) {
         next();
     } else {
-        res.render(main);
+        res.redirect('main');
     }
 };
+
+module.exports = isAuth;

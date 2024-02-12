@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { Games, Like, User } = require('../../models')
+const { Games, Like, User } = require('../../models');
+const isAuth = require('../../utils/helpers');
 require('dotenv').config();
 
 router.post('/:id', isAuth, async (req, res) => {

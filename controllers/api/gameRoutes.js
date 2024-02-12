@@ -33,7 +33,7 @@ router.get('/search', isAuth, async (req, res) => {
             genre: game.genre[0],
             rawgId: game.id,
         });
-        res.render('whatever', { data: newGame });
+        res.render('logos', { data: newGame });
     } catch (err) {
         res.status(500).json(err);
     };
@@ -47,7 +47,7 @@ router.get('/genres', async (req, res) => {
         };
 
         const genres = await axios.get(`https://rawg.io/api/genres?key=${process.env.APIKEY}&page_size=12`, { headers });
-        res.render('whatever', { data: genres.data });
+        res.render('logos', { data: genres.data });
     } catch (err) {
         res.status(500).json(err);
     };
@@ -60,7 +60,7 @@ router.get('/popular', async (req, res) => {
         };
 
         const popular = await axios.get(`https://rawg.io/api/collections/lists/popular?key=${process.env.APIKEY}&page_size=12`, { headers });
-        res.render('whatever', { data: popular.data });
+        res.render('logos', { data: popular.data });
     } catch (err) {
         res.status(500).json(err);
     };

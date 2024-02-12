@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     };
 
     const games = await axios.get(`https://rawg.io/api/games?key=${process.env.APIKEY}&page_size=15`, { headers });
-    res.render('main', { data: games.data });
+    res.render('logos', { data: games.data });
 } catch (err) {
     res.status(500).json(err);
 };
@@ -27,7 +27,7 @@ router.get('/profile', isAuth, async (req, res) => {
         const userId = req.session.userId;
     
         if (!userId) {
-          res.redirect('main')
+          res.redirect('logos')
         };
 
         const user = await User.findbyPk(userId);

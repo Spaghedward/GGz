@@ -40,3 +40,29 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
+
+// app.engine('handlebars',exphbs({
+//   extname 'handlebars',
+//   defaultLayout: 'index',
+//   layoutsDir: __dirname + 'views/layouts',
+//   partialsDir: __dirname + 'views/partials',
+
+// }));
+
+// app.get('/', (req,res)=>{
+//   res.prependListener("main",{title:"Good Gamez"});
+// })
+
+// app.get('/games', (req,res)=>{
+//   res.prependListener("main",{title:"Gamez"});
+// })
+// app.get('/profiles', (req,res)=>{
+//   res.prependListener("main",{title:"Profiles"});
+// })
+// app.get('/support', (req,res)=>{
+//   res.prependListener("main",{title:"Support"});
+// })
+// app.get('/404', (req,res)=>{
+//   res.prependListener("main",{title:"Sorry, page not found!"});
+// })
+

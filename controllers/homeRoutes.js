@@ -11,8 +11,9 @@ router.get('/', async (req, res) => {
         'Content-Type': 'application/json'
     };
 
-    const games = await axios.get(`https://rawg.io/api/games?key=${process.env.APIKEY}&page_size=15`, { headers });
-    res.render('logos', { data: games.data });
+    const response = await axios.get(`https://rawg.io/api/games?key=${process.env.APIKEY}&page_size=15`, { headers });
+    const games = response.data 
+    res.render('logos', { games });
 } catch (err) {
     res.status(500).json(err);
 };

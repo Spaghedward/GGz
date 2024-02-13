@@ -1,6 +1,6 @@
-const navbarMenu = document.getElementById("menu");
-const burgerMenu = document.getElementById("burger");
-const headerMenu = document.getElementById("header");
+const navbarMenu = document.querySelector("#menu");
+const burgerMenu = document.querySelector("#burger");
+const headerMenu = document.querySelector("#header");
 
 // Open Close Navbar Menu on Click Burger
 if (burgerMenu && navbarMenu) {

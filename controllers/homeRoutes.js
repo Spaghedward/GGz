@@ -37,11 +37,13 @@ router.get('/', async (req, res) => {
         //       }
         // );
 
+
         res.render('logos', { gameslist });
 
     } catch (err) {
         res.status(500).json(err);
     };
+
 });
 
 router.get('/login', (req, res) => {

@@ -15,16 +15,16 @@ Game.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    screenshots_count: {
-      type: DataTypes.INTEGER,
+    image: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
     released: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    genre: {
-      type: DataTypes.STRING,
+    rating: {
+      type: DataTypes.DECIMAL,
       allowNull: false,
     },
     rawgId: {

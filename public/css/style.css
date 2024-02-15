@@ -339,9 +339,11 @@ a, button {
 }
 
 .logos-slide img { /*spacing between the game photos*/
-  height: 75px;
+  height: 175px;
   margin: 10px 10px;
   border-radius: 15px;
+  background-color: blue;
+  width: 175px;
 }
 
 .wrapper {
@@ -359,8 +361,8 @@ a, button {
 .social {     
   display: flex;
   flex-wrap: wrap;
-  position: absolute;
-  bottom: -100px;
+  position: fixed;
+  bottom: 0;
   width: 100%;
 }
 .login-wrapper {

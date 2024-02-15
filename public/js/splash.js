@@ -1,4 +1,4 @@
-audio.play():
+audio.play();
 
 window.addEventListener("DOMContentLoaded", event => {
     const audio = document.querySelector("audio");

@@ -20,7 +20,7 @@ Like.init(
         gameId: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            references: { model: "games" },
+            references: { model: "game" },
             unique: 'unique_constraint',
         },
         createdAt: {

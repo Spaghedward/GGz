@@ -1,24 +1,25 @@
-const user = require('./user');
-const game = require('./game');
+const User = require('./user');
+const Game = require('./game');
+const Like = require('./like')
 
-// user.belongsToMany(game, {
-//   through: {
-//     model: 'like',
-//     unique: false,
-//   },
-//   as: 'likedGames',
-//   foreignKey: 'userId',
-//   constraints: false,
-// });
+user.belongsToMany(game, {
+  through: {
+    model: 'like',
+    unique: false,
+  },
+  as: 'likedGames',
+  foreignKey: 'userId',
+  constraints: false,
+});
 
-// game.belongsToMany(user, {
-//   through: {
-//     model: 'like',
-//     unique: false,
-//   },
-//   as: 'likingUsers',
-//   // foreignKey: ,
-//   constraints: false,
-// });
+game.belongsToMany(user, {
+  through: {
+    model: 'like',
+    unique: false,
+  },
+  as: 'likingUsers',
+  foreignKey: 'gameId',
+  constraints: false,
+});
 
-module.exports = { user, game };
+module.exports = { User, Game, Like };

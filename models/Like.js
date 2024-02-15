@@ -11,16 +11,16 @@ Like.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        userId: {
+        user_Id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            references: { model: "user" },
+            references: { model: "user", key: "id" },
             unique: 'unique_constraint',
         },
-        gameId: {
+        game_Id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            references: { model: "game" },
+            references: { model: "game", key: "id" },
             unique: 'unique_constraint',
         },
         createdAt: {
@@ -37,7 +37,7 @@ Like.init(
         modelName: 'like',
         uniqueKeys: {
             unique_constraint: {
-                fields: ['userId', 'gameId'],
+                fields: ['user_Id', 'game_Id'],
             },
         },
     }

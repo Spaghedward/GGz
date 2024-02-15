@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Like, Game, User } = require('../models');
 const axios = require('axios');
-// const isAuth = require('../utils/helpers');
+const isAuth = require('../utils/helpers');
 require('dotenv').config();
 
 
@@ -27,17 +27,6 @@ router.get('/', async (req, res) => {
 
         await Game.bulkCreate(createGames);
 
-        // await Game.create(
-        //     {
-        //         name: 'Grand Theft Auto V',
-        //         image: 'https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg',
-        //         released: '2013-09-17',
-        //         rating: 4.47,
-        //         rawgId: 3498
-        //       }
-        // );
-
-
         res.render('logos', { gameslist });
 
     } catch (err) {
@@ -53,7 +42,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('/profiles', async (req, res) => {
+router.get('/profiles', isAuth, async (req, res) => {
     try {
         const userId = req.session.userId;
 

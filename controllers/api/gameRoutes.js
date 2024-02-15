@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Game } = require('../../models');
 // const axios = require('axios');
-// const isAuth = require('../../utils/helpers');
+const isAuth = require('../../utils/helpers');
 require('dotenv').config();
 
 router.post('/', async (req, res) => {

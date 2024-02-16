@@ -28,7 +28,8 @@ likeButtons.forEach(likeButton => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const searchButton = document.getElementById('search-but');
+    const searchButton = document.getElementById('search-button');
+    const gameId = searchInput.closest('.card').dataset.gameid;
 
     searchButton.addEventListener('click', async () => {
         try {

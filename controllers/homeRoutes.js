@@ -44,7 +44,7 @@ router.get('/login', (req, res) => {
 
 router.get('/profiles', isAuth, async (req, res) => {
     try {
-        const userId = req.session.userId;
+        const userId = req.session.userid;
 
         if (!userId) {
             res.redirect('logos')

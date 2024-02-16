@@ -14,15 +14,11 @@ Good Games (GGz) is an application designed to allow users to find and keep trac
 - BCrypt
 
 
-## Installation 
+## Usage
 
-* To test the routes, feel free to either create your own user or use the following credentials in the .env file: 
+[GGz Website](https://geegeez-a51e8059ab81.herokuapp.com/)
 
-  * `username`: "   "
-  
-  * `email`: "   "
-  
-  * `password`: "   "
+On our website you can create an account to be able to save your favorite games to your video game library.
 
 ## Collaborators
 

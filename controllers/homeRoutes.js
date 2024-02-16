@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 
         const games = await axios.get(`https://rawg.io/api/games?key=${process.env.APIKEY}&page_size=12`, { headers });
         const gameslist = games.data.results;
-    
+
 
         const createGames = gameslist.map(data => ({
             name: data.name,

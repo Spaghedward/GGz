@@ -329,7 +329,8 @@ a, button {
 }
 
 .logos-slide {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
   white-space: nowrap;
   animation: 60s slide infinite linear;
   border: 5px solid black
@@ -357,7 +358,7 @@ a, button {
 
 .social {     
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   position: fixed;
   bottom: 0;
   width: 100%;

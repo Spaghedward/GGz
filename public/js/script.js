@@ -27,4 +27,28 @@ likeButtons.forEach(likeButton => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const searchButton = document.getElementById('search-but');
+
+    searchButton.addEventListener('click', async () => {
+        try {
+            const searchInput = document.getElementById('search-input');
+            const searchQuery = searchInput.value.trim();
+
+            if (searchQuery) {
+                const newGame = await fetch(`http://localhost:3001/api/games/${gameId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ gameId }),
+                });
+            } else {
+                console.log('Please enter a search query.');
+            }
+        } catch (err) {
+            console.error('Error:', err);
+        }
+    });
+});
 

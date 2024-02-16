@@ -22,28 +22,28 @@ router.post('/', async (req, res) => {
   });
   
 
-// router.get('/search', async (req, res) => {
-//     try {
-//         const headers = {
-//             'Content-Type': 'application/json'
-//         };
+router.get('/search', async (req, res) => {
+    try {
+        const headers = {
+            'Content-Type': 'application/json'
+        };
 
-//         const response = await axios.get(`https://rawg.io/api/games?key=${process.env.APIKEY}&search=${req.query.search}&page_size=1`, { headers });
-//         const games = response.data;
+        const response = await axios.get(`https://rawg.io/api/games?key=${process.env.APIKEY}&search=${req.query.search}&page_size=1`, { headers });
+        const games = response.data;
 
-//         const newGame = await Game.create({
-//             name: games.results[0].name,
-//             screenshot: games.results[0].background_image,
-//             released: games.results[0].released,
-//             genre: games.results[0].genre[0],
-//             rawgId: games.results[0].id,
-//         });
-//         res.render('games', { data: newGame });
-//     } catch (err) {
-//         res.status(500).json(err);
-//     };
+        const newGame = await Game.create({
+            name: games.results[0].name,
+            screenshot: games.results[0].background_image,
+            released: games.results[0].released,
+            genre: games.results[0].genre[0],
+            rawgId: games.results[0].id,
+        });
+        res.render('games', { data: newGame });
+    } catch (err) {
+        res.status(500).json(err);
+    };
 
-// });
+});
 
 // router.get('/genres', async (req, res) => {
 //     try {

@@ -16,6 +16,7 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
 
+
 // const sess = {
 //     secret: process.env.SECRET,
 //     cookie: {},
@@ -28,8 +29,9 @@ const hbs = exphbs.create({ helpers });
 
 // app.use(session(sess));
 
-app.engine('handlebars', hbs.engine);
+app.engine('handlebars', hbs.engine)
 app.set('view engine', 'handlebars');
+app.set('views', __dirname + '/views');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -41,28 +43,39 @@ sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
 
-// app.engine('handlebars',exphbs({
-//   extname 'handlebars',
-//   defaultLayout: 'index',
-//   layoutsDir: __dirname + 'views/layouts',
-//   partialsDir: __dirname + 'views/partials',
 
-// }));
 
-// app.get('/', (req,res)=>{
-//   res.prependListener("main",{title:"Good Gamez"});
-// })
+  app.get('/main', (req, res) => {
+    res.render('main');
+    // render your contact.handlebars
+  })
 
-// app.get('/games', (req,res)=>{
-//   res.prependListener("main",{title:"Gamez"});
-// })
-// app.get('/profiles', (req,res)=>{
-//   res.prependListener("main",{title:"Profiles"});
-// })
-// app.get('/support', (req,res)=>{
-//   res.prependListener("main",{title:"Support"});
-// })
-// app.get('/404', (req,res)=>{
-//   res.prependListener("main",{title:"Sorry, page not found!"});
-// })
+    app.get('/games', (req, res) => {
+      res.render('games');
+      // render your contact.handlebars
+    })
 
+    app.get('/profiles', (req, res) => {
+      res.render('profiles');
+      // render your contact.handlebars
+    })
+
+app.get('/support', (req, res) => {
+  res.render('support');
+  // render your contact.handlebars
+})
+
+  app.get('/404', (req, res) => {
+    res.render('404');
+    // render your contact.handlebars
+  })
+
+    app.get('/login', (req, res) => {
+      res.render('login');
+      // render your contact.handlebars
+    })
+
+    app.get('/register', (req, res) => {
+      res.render('register');
+      // render your contact.handlebars
+    })

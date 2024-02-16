@@ -163,9 +163,6 @@ a, button {
     border-radius: 15px 15px;
 }
 
-.brandlogo img:hover {
-   
-}
 /* Hamburger menu stuff start */
 @media only screen and (min-width: 48rem) {
   .menu {
